@@ -1,19 +1,12 @@
 #include <gtest/gtest.h>
-#include "implementation.h" // Замените на актуальный заголовочный файл
+#include "implementation.h"
 
-TEST(BridgePatternTest, Test1) {
-    // Ваши тесты здесь
-    EXPECT_EQ(1, 1);
-}
-
-TEST(BridgePatternTest, Test2) {
-    // Ваши тесты здесь
-    EXPECT_EQ(2, 2);
-}
-
-TEST(BridgePatternTest, Test3) {
-    // Ваши тесты здесь
-    EXPECT_EQ(3, 3);
+TEST(BridgePatternTest, ConcreteImplementationATest) {
+    ConcreteImplementationA impl;
+    testing::internal::CaptureStdout();
+    impl.Operation();
+    std::string output = testing::internal::GetCapturedStdout();
+    EXPECT_EQ(output, "ConcreteImplementationA Operation\n");
 }
 
 int main(int argc, char **argv) {
