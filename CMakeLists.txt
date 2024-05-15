@@ -17,8 +17,6 @@ FetchContent_Declare(
   googletest
   URL https://github.com/google/googletest/archive/release-1.11.0.zip
 )
-# Для более новых версий CMake
-# FetchContent_MakeAvailable(googletest)
 
 FetchContent_GetProperties(googletest)
 if(NOT googletest_POPULATED)
