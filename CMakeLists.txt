@@ -6,8 +6,8 @@ project(BridgePattern)
 # Установка стандарта C++
 set(CMAKE_CXX_STANDARD 11)
 
-# Добавление исходного файла
-add_executable(bridge main.cpp)
+# Добавление исходных файлов
+add_executable(bridge main.cpp implementation.cpp)
 
 # Включение FetchContent
 include(FetchContent)
@@ -29,7 +29,7 @@ endif()
 # Добавление тестов
 enable_testing()
 
-add_executable(runTests test.cpp)
+add_executable(runTests test.cpp implementation.cpp)
 target_link_libraries(runTests gtest gtest_main)
 
 add_test(NAME runTests COMMAND runTests)
